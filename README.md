@@ -6,11 +6,15 @@ Primeiramente vamos abrir o Visual Studio e em  **Arquivo->Novo->Projeto** vamos
 
 Selecionar **API Web do ASP.NET Core** e clikar Próximo.
 
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img1.JPG)
+
 Na Próxima tela colocar em **Nome do projeto** um nome que identifique sua api no nosso exemplo colocamos **VaiVoaApi**.
 
 Se quiser pode alterar o **Local** onde será salvo sua aplicação para um destino de sua preferencia.
 
 Em seguida Clicar em Próximo.
+
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img2.JPG)
 
 Na Próxima tela selecionar a sua **Estrutura de Destino** para este exemplo utilizamos **.NET 5.0**.
 
@@ -19,6 +23,8 @@ Deixamos marcado **Configurar para HTTPS** para trabalharmos com conexão segura
 Deixamos marcado **Habilitar o suporte a OpenAPI** para utilizarmos o **Swagger** para facilitar os nossos testes da API.
 
 Por fim  clicamos em **Criar**.
+
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img3.JPG)
 
 O Visual Studio criará seu projeto, como habilitamos o **Swagger** podemos apertar no teclado a combinação de teclas **Ctrl + f5** onde teremos 1 endpoint de teste.
 
@@ -32,7 +38,7 @@ Criaremos dentro da pasta **Models** duas classes:
 
  - Pessoa.cs
  - Cartao.cs
- - 
+ 
 Para isso clicamos com o botão direito do mouse em **Models** depois selecionamos **Adicionar** e logo em seguida **Novo Item**, na tela que surgirá selecionamos **Classe**
 informamos o nome (Pessoa.cs) e clicamos em **Adicionar**.
 
@@ -83,6 +89,8 @@ Pacotes Necessários
 Para instalar os **Pacotes** necessários para a nossa **API** funcionar vamos em **Ferramentas->Gerenciador de Pacotes do NuGet->Gerenciar Pacotes do NuGet para a Solução** vamos na Aba **Procurar** na caixa de pesquisa pesquisar os pacotes, após encontrar selecionar o pacote, depois selecionar **Projeto** e clicar em **Instalar**, qando aparecer a caixa de **Aceitação da Licença** clicar em **Aceitar**.
 
 > **OBS:**  Repita o mesmo procedimento para instalar todos os **Pacotes**.
+
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img4.JPG)
 
 ## Criando Data
 
@@ -166,12 +174,16 @@ Vamos criar o **Controlller - PessoasController**.
 
 Vamos em painel **Gerenciador de Soluções** clicamos com o botão direito na pasta **Controllers** depois selecionamos **Adicionar** e logo em seguida **Novo item com scaffold**, selecionamos **API** depois clicamos em **Controlador API com ações, usando o Entity Framework** e em seguida **Adicionar**.
 
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img5.JPG)
+
 Na tela que surge:
 - **Classe do Modelo** vamos selecionar **Pessoa (VaiVoaApi.Models)**
 - **Classe de contexto de dados** vamos selecionar **AppDbContext (VaiVoaApi.Data)**
 - **Nome do controlador** deixamos **PessoasController**
 
 Então clicamos em **Adicionar**, o Visual Studio irá gerar automaticamente o nosso Controller.
+
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img6.JPG)
 
 Ao apertar no teclado a combinação de teclas **Ctrl + f5** o **Swagger** mostrara os Endpoints criados 5 ao todo.
 
@@ -289,3 +301,10 @@ Por fim retornamos as informações da Pessoa e seu novo número de Cartão gera
 
     return  CreatedAtAction("GetPessoa", new { email  =  p.Email }, p);
 Ao apertar no teclado a combinação de teclas **Ctrl + f5** o **Swagger** mostrara os 2 Endpoints.
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/imgFinal.JPG)
+
+Resultado apos consumir a API pelo metodo **GET** utilizando o parametro email outro@email.com
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img8.JPG)
+
+Resultado apos consumir a API pelo metodo **POST**  passando no corpo o JSON com email outro@email.com
+![enter image description here](http://dsrtecnologia.com.br/img/vaivoa/img7.JPG)
